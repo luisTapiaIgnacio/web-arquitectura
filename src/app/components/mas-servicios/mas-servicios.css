@@ -1,0 +1,103 @@
+:host{
+  display:flex;
+  justify-content:center;
+  padding:80px 20px;
+  background:#0a1520;
+}
+
+/* TARJETA */
+
+.card-glow{
+
+  text-align: center;
+  width:60%;
+
+  background:var(--color-primary);
+
+  border-radius:16px;
+
+  padding:35px 40px;
+
+  position:relative;
+
+  overflow:hidden;
+
+  box-shadow:0 10px 30px rgba(0,0,0,0.6);
+
+}
+
+/* GLOW */
+
+.card-glow::before,
+.card-glow::after{
+
+  content:"";
+
+  position:absolute;
+
+  left:0;
+  right:0;
+
+  height:80px;
+
+  background:linear-gradient(90deg,transparent,#22d3ee,transparent);
+
+  filter:blur(25px);
+
+  opacity:.25;
+
+  z-index:0;
+
+}
+
+.card-glow::before{
+  top:-30px;
+}
+
+.card-glow::after{
+  bottom:-30px;
+}
+
+/* TEXTO */
+
+.titulo{
+  color:white;
+  font-size:1.6rem;
+  font-weight:700;
+}
+
+.descripcion{
+  color:#94a3b8;
+  font-size:1rem;
+  line-height:1.6;
+}
+
+/* BOTON */
+
+.btn-custom{
+
+  background:#fbbf24;
+
+  color:#0f172a;
+
+  border:none;
+
+  padding:12px 28px;
+
+  border-radius:40px;
+
+  font-weight:700;
+
+  cursor:pointer;
+
+  transition:.3s;
+
+}
+
+.btn-custom:hover{
+
+  background:#fcd34d;
+
+  transform:translateY(-3px);
+
+}

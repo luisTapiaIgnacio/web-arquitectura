@@ -1,0 +1,70 @@
+<section id="paquetes" class="paquetes-section">
+  <div class="container">
+
+    <!-- ░░ HEADER DE SECCIÓN ░░ -->
+    <div class="section-header text-center mb-5">
+      <div class="title-row d-flex align-items-center justify-content-center gap-3">
+        <div class="title-line"></div>
+        <h2 class="section-title">PLANES DE DISEÑO ARQUITECTÓNICO</h2>
+        <div class="title-line"></div>
+      </div>
+      <p class="section-sub mt-2">Elige el paquete que mejor se adapte a tu proyecto</p>
+    </div>
+
+    <!-- ░░ GRID DE PAQUETES ░░ -->
+    <div class="row g-4 justify-content-center">
+
+      <div
+        *ngFor="let paquete of paquetes"
+        class="col-12 col-sm-6 col-lg-4"
+      >
+        <!-- CARD -->
+        <div class="pack-card" [class.popular]="paquete.popular">
+
+          <!-- Badge popular -->
+          <div class="popular-badge" *ngIf="paquete.popular">MÁS POPULAR</div>
+
+          <!-- Imagen con badge de nombre encima -->
+          <div class="card-img-wrap">
+            <img [src]="paquete.imagen" [alt]="paquete.nombre" class="card-img" />
+            <!-- Badge nombre del pack -->
+            <div class="pack-badge" [ngClass]="'badge-' + paquete.badge">
+              {{ paquete.nombre }}
+            </div>
+          </div>
+
+          <!-- Precio -->
+          <div class="card-price d-flex align-items-baseline gap-2">
+            <span class="desde-label">{{ paquete.desdeLabel }}</span>
+            <span class="precio">{{ paquete.precio }}</span>
+            <span class="moneda">{{ paquete.moneda }}</span>
+          </div>
+
+          <!-- Separador -->
+          <div class="card-divider"></div>
+
+          <!-- Items -->
+          <ul class="card-items">
+            <li *ngFor="let item of paquete.items" class="card-item">
+              <svg class="check-icon" xmlns="http://www.w3.org/2000/svg"
+                   viewBox="0 0 24 24" fill="currentColor">
+                <path fill-rule="evenodd"
+                  d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
+                  clip-rule="evenodd"/>
+              </svg>
+              {{ item }}
+            </li>
+          </ul>
+
+          <!-- Botones -->
+          <div class="card-actions d-flex gap-2 mt-auto">
+            <button class="btn-saber">SABER MÁS</button>
+            <button class="btn-adquirir">ADQUIRIR</button>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

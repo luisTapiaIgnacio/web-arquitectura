@@ -1,0 +1,40 @@
+<section id="portfolio" class="clearfix">
+  <div class="container">
+
+     <!-- TÍTULO -->
+     <div class="row justify-content-center">
+      <div class="col-12 text-center">
+        <div class="section-title">
+          <span class="title-line"></span>
+          <h2>NUESTROS PROYECTOS</h2>
+          <span class="title-line"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="masonry-grid">
+      <div *ngFor="let item of items" class="masonry-item">
+        <div class="portfolio-wrap">
+          <img [src]="item.imagen" class="img-fluid" [alt]="item.titulo" />
+          <div class="portfolio-info">
+            <h4><a [href]="item.enlace">{{ item.titulo }}</a></h4>
+            <p>{{ item.categoria }}</p>
+            <div>
+              <a [href]="item.imagen"
+                 data-lightbox="portfolio"
+                 [attr.data-title]="item.titulo"
+                 class="link-preview"
+                 title="Preview">
+                <i class="bi bi-eye"></i>
+              </a>
+              <a [href]="item.enlace" class="link-details" title="More Details">
+                <i class="bi bi-box-arrow-up-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

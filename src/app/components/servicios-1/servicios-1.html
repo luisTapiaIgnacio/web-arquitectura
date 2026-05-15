@@ -1,0 +1,78 @@
+<section id="servicios">
+  <div class="container">
+    <div class="row g-5 align-items-center">
+      <!-- ══════════════════════════════
+           COLUMNA DERECHA
+      ══════════════════════════════ -->
+      <div class="col-lg-6">
+        <!-- ELABORACIÓN DE PLANOS -->
+        <div class="mb-4">
+          <div class="gold-line"></div>
+          <h2 class="sec-title">ELABORACIÓN DE PLANOS</h2>
+          <ul class="check-list">
+            <li *ngFor="let item of planosItems">
+              <i class="bi bi-check-circle-fill"></i> {{ item }}
+            </li>
+          </ul>
+        </div>
+
+        <!-- DISEÑO Y REMODELACIONES -->
+        <div class="mb-5">
+          <div class="gold-line"></div>
+          <h2 class="sec-title">DISEÑO Y REMODELACIONES</h2>
+          <p class="desc-text">
+            Transformamos espacios con soluciones creativas y funcionales, adaptadas a tu
+            presupuesto y visión. Nuestro equipo combina estética y estructura para resultados
+            excepcionales.
+          </p>
+          <ul class="check-list">
+            <li>
+              <i class="bi bi-check-circle-fill"></i>
+              COSTOS Y PRESUPUESTOS DE OBRA – METRADOS
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- ══════════════════════════════
+           COLUMNA IZQUIERDA
+      ══════════════════════════════ -->
+      <div class="col-12 col-md-6">
+        <div class="col-video">
+          <!-- Badge superior izquierdo — imagen PNG -->
+          <div class="badge-proyectos">
+            <img src="assets/images/proy.png" alt="+20 Proyectos con éxito" />
+          </div>
+
+          <!-- Flecha superior — imagen PNG -->
+          <div class="flecha-top">
+            <img src="assets/images/flecha-1.png" alt="flecha" />
+          </div>
+
+          <!-- Tarjeta de video -->
+          <!-- Tarjeta de video -->
+          <div class="video-card">
+            <video #videoRef muted loop playsinline poster="assets/images/poster1.jpg">
+              <source src="assets/videos/video-1.mp4" type="video/mp4" />
+            </video>
+
+            <!-- Botón play/pause -->
+            <button class="play-btn" (click)="toggleVideo(videoRef, btnRef)" #btnRef>
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+            </button>
+          </div>
+
+          <!-- Flecha inferior — misma imagen rotada con CSS -->
+          <div class="flecha-bottom">
+            <img src="assets/images/flecha.png" alt="flecha" />
+          </div>
+
+          <!-- Badge inferior derecho — imagen PNG -->
+          <div class="badge-anos">
+            <img src="assets/images/experiien.png" alt="+5 Años de experiencia" />
+          </div>
+        </div>
+        <!-- /col-video -->
+      </div>
+    </div>
+  </div>
+</section>

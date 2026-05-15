@@ -1,0 +1,116 @@
+<section id="contact" class="contact section">
+  <!-- Título -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>CONTACTO</h2>
+    <p>
+      Brindamos servicios de arquitectura y construcción con altos estándares de calidad,
+      experiencia y profesionalismo. Diseñamos <br />
+      espacios funcionales y modernos, acompañando cada proyecto desde la planificación hasta su
+      ejecución final.
+    </p>
+  </div>
+
+  <div class="container">
+    <div class="row gy-4">
+      <!-- ── COLUMNA IZQUIERDA ── -->
+      <div class="col-lg-5" data-aos="fade-right" data-aos-delay="100">
+        <div class="info-item">
+          <div class="info-icon">
+            <i class="bi bi-chat-dots"></i>
+          </div>
+          <div class="info-content">
+            <h4>Escribeme y hablemos de tu proyecto:</h4>
+            <p>
+              Estamos aquí para hablar sobre su visión y explorar cómo podemos hacerla realidad
+              juntos.
+            </p>
+          </div>
+        </div>
+
+        <div class="contact-details">
+          <div class="detail-item">
+            <div class="detail-icon">
+              <i class="bi bi-envelope-open"></i>
+            </div>
+            <div class="detail-content">
+              <span class="detail-label">Correo:</span>
+              <span class="detail-value">contact&#64;example.com</span>
+            </div>
+          </div>
+
+          <div class="detail-item">
+            <div class="detail-icon">
+              <i class="bi bi-telephone-outbound"></i>
+            </div>
+            <div class="detail-content">
+              <span class="detail-label">Teléfono:</span>
+              <span class="detail-value">+1 (555) 432-8976</span>
+            </div>
+          </div>
+
+          <div class="detail-item">
+            <div class="detail-icon">
+              <i class="bi bi-geo-alt-fill"></i>
+            </div>
+            <div class="detail-content">
+              <span class="detail-label">Dirección:</span>
+              <span class="detail-value">547 Madison Avenue<br />New York, NY 10022</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── COLUMNA DERECHA (formulario) ── -->
+      <div class="col-lg-7" data-aos="fade-left" data-aos-delay="200">
+        <div class="form-wrapper">
+          <div class="form-header">
+            <h3>Enviar mensaje</h3>
+          </div>
+
+          <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Nombre completo</label>
+                  <input type="text" name="name" [(ngModel)]="formData.name" required />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Correo</label>
+                  <input type="email" name="email" [(ngModel)]="formData.email" required />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Asunto</label>
+              <input type="text" name="subject" [(ngModel)]="formData.subject" required />
+            </div>
+
+            <div class="form-group">
+              <label>Mensaje</label>
+              <textarea name="message" rows="5" [(ngModel)]="formData.message" required></textarea>
+            </div>
+
+            <!-- Estados del formulario -->
+            <div class="my-3">
+              <div class="loading" *ngIf="status === 'loading'">Loading...</div>
+              <div class="error-message" *ngIf="status === 'error'">
+                Algo salió mal. Por favor, inténtalo de nuevo.
+              </div>
+              <div class="sent-message" *ngIf="status === 'success'">
+                Tu mensaje a sido enviado. GRACIAS!
+              </div>
+            </div>
+
+            <button type="submit" class="submit-btn" [disabled]="status === 'loading'">
+              <span>Enviar Mensaje</span>
+              <i class="bi bi-arrow-right"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

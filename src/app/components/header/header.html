@@ -1,0 +1,78 @@
+<header [class.scrolled]="isScrolled" [class.menu-open]="menuOpen">
+  <div class="container d-flex align-items-center justify-content-between">
+
+    <!-- LOGO -->
+    <a class="logo" href="#inicio" (click)="setActive('Inicio')">
+      <img
+        src="assets/images/estu.png"
+        alt="Estudio Tapia — Arquitectura y Construcción"
+        class="logo-img"
+      />
+    </a>
+
+    <!-- NAV DESKTOP — d-none d-lg-flex: oculto en móvil, visible en lg+ -->
+    <nav class="nav-desktop d-none d-lg-flex align-items-center gap-4">
+      <a
+        *ngFor="let link of navLinks"
+        [href]="link.href"
+        class="nav-link"
+        [class.active]="activeLink === link.label"
+        (click)="setActive(link.label)"
+      >
+        {{ link.label }}
+        <span class="nav-underline"></span>
+      </a>
+    </nav>
+
+    <!-- CTA + HAMBURGER -->
+    <div class="d-flex align-items-center gap-3">
+      <a
+        href="#contacto"
+        class="cta-btn d-none d-lg-inline-flex"
+        (click)="setActive('Contacto')"
+      >
+        Consulta gratis
+      </a>
+      <button
+        class="hamburger d-lg-none"
+        (click)="toggleMenu()"
+        [attr.aria-expanded]="menuOpen"
+        aria-label="Abrir menú"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<!-- MENÚ MÓVIL -->
+<div class="mobile-menu" [class.open]="menuOpen">
+  <div class="container d-flex flex-column py-3 gap-1">
+    <a
+      *ngFor="let link of navLinks"
+      [href]="link.href"
+      class="mobile-link"
+      [class.active]="activeLink === link.label"
+      (click)="setActive(link.label)"
+    >
+      {{ link.label }}
+    </a>
+    <a
+      href="#contacto"
+      class="cta-btn mt-3 text-center"
+      (click)="setActive('Contacto')"
+    >
+      Consulta gratis
+    </a>
+  </div>
+</div>
+
+<!-- Overlay -->
+<div
+  class="overlay"
+  [class.visible]="menuOpen"
+  (click)="toggleMenu()"
+></div>

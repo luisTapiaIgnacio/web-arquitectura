@@ -1,0 +1,172 @@
+/* ── VARIABLES ─────────────────────────────────────── */
+
+
+/* ── SECTION ────────────────────────────────────────── */
+.faq-2.section {
+  padding: 60px 0;
+
+  overflow: clip;
+}
+
+/* ── SECTION TITLE ──────────────────────────────────── */
+.section-title {
+  text-align: center;
+  padding-bottom: 60px;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #37517e;
+  font-family: 'Jost', sans-serif;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.section-title h2::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 160px;
+  height: 1px;
+  background: rgba(68, 68, 68, 0.4);
+  left: 0;
+  right: 0;
+  bottom: 1px;
+  margin: auto;
+}
+
+.section-title h2::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #47b2e4;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.section-title p {
+  color: #444444;
+  margin-bottom: 0;
+}
+
+/* ── FAQ CONTAINER ──────────────────────────────────── */
+.faq-container {
+  margin-top: 15px;
+}
+
+/* ── FAQ ITEM ───────────────────────────────────────── */
+.faq-item {
+  background-color: #ffffff;
+  position: relative;
+  padding: 20px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  border-radius: 4px;
+  transition: box-shadow 0.3s ease;
+}
+
+.faq-item:last-child {
+  margin-bottom: 0;
+}
+
+.faq-item:hover {
+  box-shadow: 0 4px 20px rgba(71, 178, 228, 0.15);
+}
+
+/* ── PREGUNTA (h3) ──────────────────────────────────── */
+.faq-item h3 {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  margin: 0 30px 0 32px;
+  color: #37517e;
+  font-family: 'Jost', sans-serif;
+  transition: color 0.3s;
+  cursor: pointer;
+}
+
+.faq-item h3:hover {
+  color: #47b2e4;
+}
+
+/* ── CONTENIDO (respuesta) ──────────────────────────── */
+.faq-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease-in-out,
+              opacity 0.35s ease-in-out,
+              padding-top 0.35s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.faq-content p {
+  margin-bottom: 0;
+  overflow: hidden;
+  color: #444444;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* ── ICONO PREGUNTA ─────────────────────────────────── */
+.faq-icon {
+  position: absolute;
+  top: 22px;
+  left: 20px;
+  font-size: 20px;
+  line-height: 0;
+  color: #47b2e4;
+  transition: color 0.3s;
+}
+
+/* ── ICONO TOGGLE (chevron) ─────────────────────────── */
+.faq-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 16px;
+  line-height: 0;
+  color: #444444;
+  transition: transform 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+.faq-toggle:hover {
+  color: #47b2e4;
+}
+
+/* ── ESTADO ACTIVO ──────────────────────────────────── */
+.faq-active h3 {
+  color: #47b2e4;
+}
+
+.faq-active .faq-content {
+  grid-template-rows: 1fr;
+  visibility: visible;
+  opacity: 1;
+  padding-top: 10px;
+}
+
+.faq-active .faq-toggle {
+  transform: rotate(90deg);
+  color: #47b2e4;
+}
+
+/* ── AOS mobile ─────────────────────────────────────── */
+@media screen and (max-width: 768px) {
+  [data-aos-delay] {
+    transition-delay: 0 !important;
+  }
+
+  .faq-item h3 {
+    font-size: 16px;
+  }
+}

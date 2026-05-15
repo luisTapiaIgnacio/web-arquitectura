@@ -1,0 +1,186 @@
+#portfolio {
+  padding: 60px 0;
+}
+
+
+/* --- TÍTULO --- */
+.section-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 50px;
+}
+
+.section-title h2 {
+  font-size: var(--font-size-xxl);
+  font-weight: 800;
+  letter-spacing: 4px;
+  color: #00d4ff;
+  white-space: nowrap;
+  
+  font-family: var(--font-body);
+
+}
+
+.title-line {
+  display: block;
+  width: 80px;
+  height: 2px;
+  background-color: #00d4ff;
+  position: relative;
+}
+
+.title-line::after {
+  content: '';
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background-color: #00d4ff;
+  border-radius: 50%;
+}
+
+.title-line:first-child::after {
+  right: auto;
+  left: -6px;
+}
+.masonry-grid {
+  column-count: 3;
+  column-gap: 16px;
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 16px;
+}
+
+/* ── WRAP con hover oscuro ── */
+.portfolio-wrap {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.portfolio-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/* Zoom sutil en hover */
+.portfolio-wrap:hover img {
+  transform: scale(1.05);
+  opacity: 0.25;
+}
+
+/* Fondo oscuro con brillo de color */
+.portfolio-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 80, 200, 0.75), rgba(0, 20, 80, 0.85));
+  border-radius: 10px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.portfolio-wrap:hover::after {
+  opacity: 1;
+}
+
+/* Sombra colorida en hover */
+.portfolio-wrap:hover {
+  box-shadow: 0 12px 40px rgba(0, 120, 255, 0.45),
+              0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* ── INFO OVERLAY ── */
+.portfolio-info {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  opacity: 0;
+  z-index: 2;
+  transition: opacity 0.35s ease;
+  padding: 16px;
+}
+
+.portfolio-wrap:hover .portfolio-info {
+  opacity: 1;
+}
+
+.portfolio-info h4 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #fff;
+}
+
+.portfolio-info h4 a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.portfolio-info h4 a:hover {
+  color: #7ec8ff;
+}
+
+.portfolio-info p {
+  padding: 0;
+  margin: 0 0 12px;
+  color: #b3d4ff;
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ── ICONOS ── */
+.portfolio-info .link-preview,
+.portfolio-info .link-details {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  margin: 0 6px;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  text-decoration: none;
+}
+
+.portfolio-info .link-preview:hover,
+.portfolio-info .link-details:hover {
+  background: #007bff;
+  border-color: #007bff;
+  transform: scale(1.15);
+}
+
+.portfolio-info .link-preview i,
+.portfolio-info .link-details i {
+  font-size: 20px;
+  color: #fff;
+}
+
+
+/* ── RESPONSIVE ── */
+@media (max-width: 991px) {
+  .masonry-grid { column-count: 2; }
+}
+
+@media (max-width: 575px) {
+  .masonry-grid { column-count: 1; }
+}
+

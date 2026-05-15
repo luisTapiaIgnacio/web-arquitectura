@@ -1,0 +1,28 @@
+
+<section id="features" class="features-section">
+  <div class="container">
+
+    <!-- TÍTULO -->
+    <div class="row justify-content-center">
+      <div class="col-12 text-center">
+        <h2 class="features-title">¿PORQUE ELEGIR ESTUDIO TAPIA?</h2>
+      </div>
+    </div>
+
+    <!-- CARDS -->
+    <div class="row justify-content-center mt-5 g-4">
+
+      <div *ngFor="let feature of features"
+           class="col-12 col-sm-6 col-lg-3 d-flex justify-content-center">
+        <div class="feature-card text-center">
+          <div class="feature-icon mx-auto">
+            <i [class]="'bi ' + feature.icon"></i>
+          </div>
+          <h3 class="feature-card-title">{{ feature.titulo }}</h3>
+          <p class="feature-card-text">{{ feature.texto }}</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

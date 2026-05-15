@@ -1,0 +1,359 @@
+/* ── VARIABLES ─────────────────────────────────────── */
+:host {
+  --primary: #ecad29;
+  --text: rgba(255, 255, 255, 0.87);
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #1a1a1a;
+  color: var(--text);
+  font-family: "Inter", sans-serif;
+}
+
+/* ── INDICATOR ──────────────────────────────────────── */
+.indicator {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 5px;
+  z-index: 60;
+  background-color: var(--primary);
+}
+
+/* ── CARD ───────────────────────────────────────────── */
+.card {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-position: center;
+  background-size: cover;
+  box-shadow: 6px 6px 10px 2px rgba(0, 0, 0, 0.6);
+}
+
+.card-content {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--text);
+  padding-left: 16px;
+}
+
+.content-place {
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.content-start {
+  width: 30px;
+  height: 5px;
+  border-radius: 99px;
+  background-color: var(--text);
+}
+
+.content-title-1,
+.content-title-2 {
+  font-weight: 600;
+  font-size: 17px;
+  font-family: "Oswald", sans-serif;
+}
+
+/* ── DETAILS ────────────────────────────────────────── */
+.details {
+  z-index: 22;
+  position: absolute;
+  top: 240px;
+  left: 60px;
+}
+
+.details .place-box {
+  height: 46px;
+  overflow: hidden;
+}
+
+.details .place-box .text {
+  padding-top: 16px;
+  font-size: 20px;
+  position: relative;
+}
+
+.details .place-box .text::before {
+  top: 0;
+  left: 0;
+  position: absolute;
+  content: "";
+  width: 30px;
+  height: 4px;
+  border-radius: 99px;
+  background-color: white;
+}
+
+.details .title-1,
+.details .title-2 {
+  font-weight: 600;
+  font-size: 72px;
+  font-family: "Oswald", sans-serif;
+  line-height: 1;
+}
+
+.details .title-box-1,
+.details .title-box-2 {
+  margin-top: 2px;
+  height: 100px;
+  overflow: hidden;
+}
+
+.details .desc {
+  margin-top: 16px;
+  width: 500px;
+  line-height: 1.6;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+}
+
+/* ── CTA ────────────────────────────────────────────── */
+.details .cta {
+  display: flex;
+  align-items: center;
+  margin-top: 24px;
+}
+
+/* ── BOTÓN BOOKMARK (manito) ────────────────────────── */
+.details .cta .bookmark {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.35s ease,
+              background 0.35s ease,
+              box-shadow 0.35s ease,
+              border-color 0.35s ease;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.details .cta .bookmark img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  display: block;
+  filter: brightness(0) invert(1);
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.details .cta .bookmark:hover {
+  background: linear-gradient(135deg, #0d6efd, #0047b3);
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-4px) scale(1.06);
+  box-shadow: 0 14px 30px rgba(13, 110, 253, 0.45),
+              0 4px 12px rgba(0, 0, 0, 0.28);
+}
+
+.details .cta .bookmark:hover img {
+  transform: scale(1.18) rotate(-8deg);
+  filter: brightness(0) invert(1);
+}
+
+.details .cta .bookmark:active {
+  transform: scale(0.95);
+}
+
+/* ── BOTÓN DISCOVER ─────────────────────────────────── */
+.details .cta .discover {
+  border: none;
+  background: linear-gradient(135deg, #0d6efd, #0047b3);
+  height: 52px;
+  border-radius: 999px;
+  color: #ffffff;
+  padding: 0 32px;
+  font-size: 13px;
+  margin-left: 16px;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  transition: all 0.35s ease;
+  box-shadow: 0 6px 20px rgba(0, 91, 255, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.details .cta .discover:hover {
+  transform: translateY(-4px) scale(1.04);
+  background: linear-gradient(135deg, #1f7bff, #003b99);
+  box-shadow: 0 14px 32px rgba(0, 91, 255, 0.45),
+              0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.details .cta .discover:active {
+  transform: scale(0.96);
+}
+
+.details .cta .discover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 80%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.22);
+  transform: skewX(-25deg);
+  transition: 0.7s ease;
+}
+
+.details .cta .discover:hover::before {
+  left: 130%;
+}
+
+/* ── NAV ────────────────────────────────────────────── */
+nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 36px;
+  font-weight: 500;
+}
+
+nav svg { width: 20px; height: 20px; }
+nav .svg-container { width: 20px; height: 20px; }
+
+nav > div {
+  display: inline-flex;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+nav > div:first-child { gap: 10px; }
+
+nav > div:last-child {
+  gap: 24px;
+  cursor: pointer;
+}
+
+nav > div:last-child > div {
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+nav > div:last-child > div:hover { opacity: 0.7; }
+
+nav > div:last-child > .active { position: relative; }
+
+nav > div:last-child > .active::after {
+  bottom: -8px;
+  left: 0;
+  right: 0;
+  position: absolute;
+  content: "";
+  height: 3px;
+  border-radius: 99px;
+  background-color: var(--primary);
+}
+
+/* ── PAGINATION ─────────────────────────────────────── */
+.pagination {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: inline-flex;
+  align-items: center;
+}
+
+.pagination .arrow {
+  z-index: 60;
+  width: 50px;
+  height: 50px;
+  border-radius: 999px;
+  border: 2px solid rgba(255, 255, 255, 0.33);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease;
+  flex-shrink: 0;
+}
+
+.pagination .arrow:hover {
+  border-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.pagination .arrow:nth-child(2) { margin-left: 20px; }
+
+.pagination .arrow svg {
+  width: 24px;
+  height: 24px;
+  stroke-width: 2;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ── PROGRESS ───────────────────────────────────────── */
+.progress-sub-container {
+  margin-left: 24px;
+  z-index: 60;
+  width: 500px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.progress-sub-background {
+  width: 500px;
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.progress-sub-foreground {
+  height: 3px;
+  background-color: var(--primary);
+}
+
+/* ── SLIDE NUMBERS ──────────────────────────────────── */
+.slide-numbers {
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  z-index: 60;
+  position: relative;
+}
+
+.slide-numbers .item {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  color: white;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  font-size: 32px;
+  font-weight: bold;
+  font-family: "Oswald", sans-serif;
+}
+
+/* ── COVER ──────────────────────────────────────────── */
+.cover {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #1a1a1a;
+  z-index: 100;
+}

@@ -1,0 +1,38 @@
+<section id="faq-2" class="faq-2 section light-background">
+  <!-- Título -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>PREGUNTAS FRECUENTES</h2>
+    <p>
+      Resolvemos las dudas más comunes sobre nuestros servicios de arquitectura y
+      <br />construcción. Nuestro equipo está comprometido en brindar asesoría profesional,
+      soluciones personalizadas <br>y acompañamiento en cada etapa de su proyecto.
+    </p>
+  </div>
+
+  <!-- Items -->
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="faq-container">
+          <div
+            *ngFor="let item of faqs"
+            class="faq-item"
+            [class.faq-active]="item.activo"
+            data-aos="fade-up"
+            [attr.data-aos-delay]="item.delay"
+          >
+            <i class="faq-icon bi bi-question-circle"></i>
+
+            <h3 (click)="toggleFaq(item)">{{ item.pregunta }}</h3>
+
+            <div class="faq-content">
+              <p>{{ item.respuesta }}</p>
+            </div>
+
+            <i class="faq-toggle bi bi-chevron-right" (click)="toggleFaq(item)"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

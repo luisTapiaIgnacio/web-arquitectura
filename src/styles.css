@@ -1,1 +1,56 @@
-/* You can add global styles to this file, and also import other style files */
+/*font-family: "Public Sans", sans-serif;
+
+/* ── VARIABLES GLOBALES ─────────────────────────── */
+:root {
+  /* Colores */
+  --color-primary:    #FF6B00;   /* naranja */
+  --color-secondary:  #00B8D4;   /* celeste */
+  --color-dark:       #0D0D0D;   /* negro */
+  --color-dark-2:     #1A1A1A;
+  --color-light:      #F5F5F5; 
+  --color-white:      #FFFFFF;
+  --color-text:       #333333;
+  --color-muted:      #888888;
+
+  /* Fuentes */
+  --font-heading: 'Public Sans', sans-serif;
+  --font-body:    'Public Sans', sans-serif;
+
+  /* Tamaños */
+  --font-size-base:  16px;
+  --font-size-sm:    14px;
+  --font-size-lg:    18px;
+  --font-size-xl:    24px;
+  --font-size-xxl:   32px;
+}
+
+/* ── RESET GLOBAL ───────────────────────────────── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  background-color: var(--color-dark);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-dark);
+  line-height: 1.2;
+}
+
+a {
+  color: var(--color-secondary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-primary);
+}

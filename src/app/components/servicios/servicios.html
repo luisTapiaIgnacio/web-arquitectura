@@ -1,0 +1,118 @@
+<section class="hero-section">
+  <div class="container">
+    <div class="row g-5 align-items-center">
+      <!-- ══════════════════════════════════
+           COLUMNA IZQUIERDA — Video + badges
+      ══════════════════════════════════════ -->
+      <div class="col-12 col-md-6">
+        <div class="col-video">
+          <!-- Badge superior izquierdo — imagen PNG -->
+          <div class="badge-proyectos">
+            <img src="assets/images/proy.png" alt="+20 Proyectos con éxito" />
+          </div>
+
+          <!-- Flecha superior — imagen PNG -->
+          <div class="flecha-top">
+            <img src="assets/images/flecha-1.png" alt="flecha" />
+          </div>
+
+          <!-- Tarjeta de video -->
+          <!-- Tarjeta de video -->
+          <div class="video-card">
+            <video #videoRef muted loop playsinline poster="assets/images/poster1.jpg">
+              <source src="assets/videos/video-1.mp4" type="video/mp4" />
+            </video>
+
+            <!-- Botón play/pause -->
+            <button class="play-btn" (click)="toggleVideo(videoRef, btnRef)" #btnRef>
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+            </button>
+          </div>
+
+          <!-- Flecha inferior — misma imagen rotada con CSS -->
+          <div class="flecha-bottom">
+            <img src="assets/images/flecha.png" alt="flecha" />
+          </div>
+
+          <!-- Badge inferior derecho — imagen PNG -->
+          <div class="badge-anos">
+            <img src="assets/images/experiien.png" alt="+5 Años de experiencia" />
+          </div>
+        </div>
+        <!-- /col-video -->
+      </div>
+
+      <!-- ══════════════════════════════════
+           COLUMNA DERECHA — Servicios
+      ══════════════════════════════════════ -->
+      <div class="col-12 col-md-6">
+        <div class="col-content">
+          <!-- ELABORACIÓN DE PLANOS -->
+          <span class="titulo-linea"></span>
+          <h2 class="titulo-seccion">ELABORACIÓN DE PLANOS</h2>
+
+          <ul class="lista-servicios">
+            <li>
+              <span class="check-icon">
+                <svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3" /></svg>
+              </span>
+              ARQUITECTÓNICOS
+            </li>
+            <li>
+              <span class="check-icon">
+                <svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3" /></svg>
+              </span>
+              ESTRUCTURALES
+            </li>
+            <li>
+              <span class="check-icon">
+                <svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3" /></svg>
+              </span>
+              INSTALACIONES SANITARIAS
+            </li>
+            <li>
+              <span class="check-icon">
+                <svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3" /></svg>
+              </span>
+              INSTALACIONES ELÉCTRICAS
+            </li>
+            <li>
+              <span class="check-icon">
+                <svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3" /></svg>
+              </span>
+              UBICACIÓN Y LOCALIZACIÓN
+            </li>
+            <li>
+              <span class="check-icon">
+                <svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3" /></svg>
+              </span>
+              SEÑALIZACIÓN Y EVACUACIÓN
+            </li>
+          </ul>
+
+          <!-- DISEÑO Y REMODELACIONES -->
+          <span class="titulo-linea"></span>
+          <h2 class="titulo-seccion">DISEÑO Y REMODELACIONES</h2>
+
+          <p class="desc-text">
+            Transformamos espacios con soluciones creativas y funcionales, adaptadas a tu
+            presupuesto y visión. Nuestro equipo combina estética y estructura para resultados
+            excepcionales.
+          </p>
+
+          <ul class="lista-servicios">
+            <li>
+              <span class="check-icon">
+                <svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3" /></svg>
+              </span>
+              COSTOS Y PRESUPUESTOS DE OBRA – METRADOS
+            </li>
+          </ul>
+        </div>
+        <!-- /col-content -->
+      </div>
+    </div>
+    <!-- /row -->
+  </div>
+  <!-- /container-fluid -->
+</section>

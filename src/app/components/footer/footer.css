@@ -1,0 +1,122 @@
+/* =====================================================
+   FOOTER ARQUITECTURA TAPIA — CSS puro + Bootstrap
+   Pegar en: footer.component.css  o  styles.css
+   ===================================================== */
+
+/* ── Base ── */
+.footer-tapia {
+  background-color: #1e2328;
+  color: #d4cfc8;
+  font-family: var(--font-body), sans-serif;
+  width: 100%;
+}
+
+.footer-tapia__inner {
+  padding-top: 2.25rem;
+  padding-bottom: 1.75rem;
+}
+
+/* ── Headings ── */
+.footer-tapia__heading {
+  font-family: var(--font-heading), sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: #f19d02;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.45rem;
+  position: relative;
+
+}
+
+.footer-tapia__heading::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 26px;
+  height: 1.5px;
+  background-color: #c8a96e;
+  opacity: 0.45;
+}
+
+/* ── Descripción empresa ── */
+.footer-tapia__desc {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #7e7a74;
+  margin: 0;
+}
+
+/* ── Lista de servicios ── */
+.footer-tapia__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.footer-tapia__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.35rem;
+  font-size: 12.5px;
+  color: #8e8880;
+  line-height: 1.5;
+}
+
+.footer-tapia__check {
+  color: #c8a96e;
+  font-size: 11px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ── Redes sociales ── */
+.footer-tapia__redes {
+  flex-wrap: wrap;
+}
+
+.footer-tapia__red-link {
+  display: block;
+  width: 42px;
+  height: 42px;
+  border-radius: 7px;
+  overflow: hidden;
+  text-decoration: none;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.footer-tapia__red-link svg {
+  width: 42px;
+  height: 42px;
+  display: block;
+}
+
+.footer-tapia__red-link:hover {
+  transform: translateY(-3px);
+  opacity: 0.82;
+}
+
+.footer-tapia__red-link:active {
+  transform: translateY(-1px);
+}
+
+.footer-tapia__redes-desc {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #6e6a65;
+  margin: 0;
+}
+
+/* ── Copyright ── */
+.footer-tapia__copyright {
+  background-color: #16191d;
+  padding: 0.75rem 1rem;
+  font-size: 12px;
+  color: #6e6a65;
+  letter-spacing: 0.03em;
+}
