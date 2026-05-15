@@ -26,9 +26,9 @@ jobs:
         run: npx ng build --configuration=production
 
       - name: Deploy a Firebase Hosting
-        uses: FirebaseExtended/action-firebase-deploy@v0
+        uses: w9jds/firebase-action@master
         with:
-          repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_LUIS_TAPIA }}
-          channelId: live
-          projectId: luis-tapia
+          args: deploy --only hosting
+        env:
+          GCP_SA_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_LUIS_TAPIA }}
+          PROJECT_ID: luis-tapia
