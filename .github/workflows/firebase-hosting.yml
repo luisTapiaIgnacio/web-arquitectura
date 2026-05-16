@@ -11,24 +11,25 @@ jobs:
 
     steps:
       - name: Checkout código
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
 
       - name: Instalar dependencias
-        run: npm install
+        run: npm ci
+
+      - name: Instalar Angular CLI
+        run: npm install -g @angular/cli
 
       - name: Build Angular
-        run: npx ng build --configuration=production
+        run: ng build --configuration=production
+
+      - name: Instalar Firebase CLI
+        run: npm install -g firebase-tools
 
       - name: Deploy a Firebase Hosting
-        uses: w9jds/firebase-action@master
-        with:
-          args: deploy --only hosting
-        env:
-          GCP_SA_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_LUIS_TAPIA }}
-          PROJECT_ID: luis-tapia
+        run: firebase deploy --only hosting --project luis-tapia --token "${{ secrets.FIREBASE_TOKEN }}"
