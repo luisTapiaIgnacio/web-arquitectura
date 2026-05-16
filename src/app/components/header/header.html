@@ -1,6 +1,5 @@
 <header [class.scrolled]="isScrolled" [class.menu-open]="menuOpen">
   <div class="container d-flex align-items-center justify-content-between">
-
     <!-- LOGO -->
     <a class="logo" href="#inicio" (click)="setActive('Inicio')">
       <img
@@ -26,11 +25,7 @@
 
     <!-- CTA + HAMBURGER -->
     <div class="d-flex align-items-center gap-3">
-      <a
-        href="#contacto"
-        class="cta-btn d-none d-lg-inline-flex"
-        (click)="setActive('Contacto')"
-      >
+      <a href="#contacto" class="cta-btn d-none d-lg-inline-flex" (click)="setActive('Contacto')">
         Consulta gratis
       </a>
       <button
@@ -44,7 +39,6 @@
         <span></span>
       </button>
     </div>
-
   </div>
 </header>
 
@@ -61,7 +55,7 @@
       {{ link.label }}
     </a>
     <a
-      href="#contacto"
+      href="https://wa.me/51923828485?text=ESTUDIO%20TAPIA,%20arquitectura%20y%20construccion%20les%20da%20la%20bienvenida%20y%20prestos%20para%20apoyarle%20en%20su%20proyecto"
       class="cta-btn mt-3 text-center"
       (click)="setActive('Contacto')"
     >
@@ -71,8 +65,4 @@
 </div>
 
 <!-- Overlay -->
-<div
-  class="overlay"
-  [class.visible]="menuOpen"
-  (click)="toggleMenu()"
-></div>
+<div class="overlay" [class.visible]="menuOpen" (click)="toggleMenu()"></div>

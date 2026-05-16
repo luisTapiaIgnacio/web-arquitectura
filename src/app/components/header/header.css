@@ -74,6 +74,8 @@ header.scrolled {
 
 /* ── Botón CTA ── */
 .cta-btn {
+  position: relative;
+  z-index: 99999;
   display: inline-flex;
   align-items: center;
   justify-content: center;
