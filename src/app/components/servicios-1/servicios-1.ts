@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { CommonModule} from '@angular/common';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-servicios-1',
-  
+
   imports: [CommonModule],
   templateUrl: './servicios-1.html',
   styleUrl: './servicios-1.css',
@@ -19,12 +19,12 @@ export class Servicios1 {
   videoSrc2 = 'assets/videos/video2.mp4';
 
   planosItems = [
-    'ARQUITECTÓNICOS',
-    'ESTRUCTURALES',
-    'INSTALACIONES SANITARIAS',
-    'INSTALACIONES ELÉCTRICAS',
+    'LICENCIA DE FUNCIONAMIENTO',
+    'LICENCIA DE CONSTRUCCION',
+    'CERTIFICADO ITSE-DEFENSA CIVIL',
+    'INDEPENDIZACION DE PREDIO',
     'UBICACIÓN Y LOCALIZACIÓN',
-    'SEÑALIZACIÓN Y EVACUACIÓN',
+    'SUB DIVISIÓN DE LOTES',
   ];
 
   expedientesItems = [

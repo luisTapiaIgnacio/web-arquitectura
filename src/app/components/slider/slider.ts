@@ -17,6 +17,8 @@ export interface SlideData {
   place: string;
   title: string;
   title2: string;
+  title3: string;
+
   description: string;
   image: string;
 }
@@ -35,22 +37,25 @@ export class SliderComponent implements OnInit, AfterViewInit, OnDestroy {
       place: '',
       title: 'COSTOS Y PRESUPUESTOS',
       title2: 'DE OBRAS - METRADOS',
+      title3: '',
       description:
-        "Desarrollamos presupuestos y metrados detallados para proyectos de construcción, permitiendo conocer de manera clara los costos, materiales y recursos necesarios antes de iniciar la obra.",
+        'Desarrollamos presupuestos y metrados detallados para proyectos de construcción, permitiendo conocer de manera clara los costos, materiales y recursos.',
       image: 'assets/images/arqui-1.jpg',
     },
     {
       place: '',
-      title: 'DISEÑO Y',
-      title2: 'REMODELACIONES',
+      title: 'DISEÑO, AMPLIACION',
+      title2: ' Y REMODELACIONES',
+      title3: '',
       description:
-        "Transformamos y renovamos espacios mediante diseños modernos y remodelaciones de calidad, creando ambientes cómodos, elegantes y funcionales para viviendas, oficinas y negocios.",
+        'Transformamos y renovamos espacios mediante diseños modernos y remodelaciones de calidad, creando ambientes cómodos, elegantes y funcionales para viviendas, oficinas y negocios.',
       image: 'assets/images/arqui-2.jpg',
     },
     {
       place: '',
-      title: 'ELABORACIÓN',
-      title2: 'DE PLANOS',
+      title: 'ELABORACIÓN DE',
+      title2: 'PLANOS Y EXPEDIENTES',
+      title3: '',
       description:
         'ARQUITECTONICOS - ESTRUCTURALES - INSTALACIONES SANITARIAS - INSTALACIONES ELECTRICAS - UBICACIÓN Y LOCALIZACIÓN - SEÑALIZACIÓN Y EVACUACIÓN',
       image: 'assets/images/arqui-3.jpg',
@@ -58,26 +63,39 @@ export class SliderComponent implements OnInit, AfterViewInit, OnDestroy {
     {
       place: '',
       title: 'EJECUCIÓN DE PROYECTOS',
-      title2: 'DE CONSTRUCCIÓN',
+      title2: 'DE CONSTRUCCIÓN ',
+      title3: '',
+
       description:
         'Desarrollamos y ejecutamos proyectos de viviendas unifamiliares, multifamiliares, edificaciones comerciales e instituciones públicas y privadas, aplicando altos estándares de calidad, planificación y profesionalismo.',
       image: 'assets/images/arqui-4.jpg',
     },
     {
       place: '',
-      title: 'TRÁMITES EN SUNARP',
-      title2: 'Y MUNICIPALIDADES',
+      title: 'TRÁMITES EN SUNARP,',
+      title2: 'MUNICIPALIDADES, ',
+      title3: 'DECLARATORIA Y SANEAMIENTO',
       description:
-        "Brindamos asesoría y gestión de trámites ante SUNARP y municipalidades, facilitando procesos administrativos, documentación técnica y permisos necesarios para proyectos de construcción, licencias y formalización de inmuebles.",
+        'Brindamos asesoría y gestión de trámites ante SUNARP y municipalidades, facilitando procesos administrativos, documentación técnica y permisos necesarios para proyectos de construcción, licencias y formalización de inmuebles.',
       image: 'assets/images/arqui-5.jpg',
     },
     {
       place: '',
-      title: 'ELABORACIÓN DE',
-      title2: 'EXPEDIENTES',
+      title: 'ELABORACIÓN DE ',
+      title2: 'EXPEDIENTES PARA ',
+      title3: 'LICENCIA DE EDIFICACION',
       description:
-        'Licencia de funcionamiento, Licencia de construccion, Certificado ITSE,  Defensa civil, Independizacion de predio, Sub división de lotes.',
+        'Licencia de funcionamiento, Licencia de construccion,  Defensa civil, Independizacion de predio, Sub división de lotes.',
       image: 'assets/images/arqui-6.jpg',
+    },
+    {
+      place: '',
+      title: 'LICENCIA DE FUNCIONAMIENTO',
+      title2: 'Y CERTIFICACION ',
+      title3: 'ITSE - DEFENSA CIVIL',
+      description:
+        'Licencia de funcionamiento, Licencia de construccion,  Defensa civil, Independizacion de predio, Sub división de lotes.',
+      image: 'assets/images/arqui-7.jpg',
     },
   ];
 
@@ -120,9 +138,11 @@ export class SliderComponent implements OnInit, AfterViewInit, OnDestroy {
     // Solo ejecutar en el browser — en SSR/Node no hay DOM ni GSAP
     if (!this.isBrowser) return;
     this.ngZone.runOutsideAngular(() => {
-      this.loadImages()
-        .then(() => this.init())
-        .catch(console.error);
+      document.fonts.ready.then(() => {   // ← espera que Oswald cargue
+        this.loadImages()
+          .then(() => this.init())
+          .catch(console.error);
+      });
     });
   }
 
@@ -258,6 +278,11 @@ export class SliderComponent implements OnInit, AfterViewInit, OnDestroy {
         activeData.title;
       (document.querySelector(`${detailsActive} .title-2`) as HTMLElement).textContent =
         activeData.title2;
+      const title3El = document.querySelector(`${detailsActive} .title-3`) as HTMLElement;
+      if (title3El) title3El.textContent = activeData.title3 || '';
+
+      const box3 = document.querySelector(`${detailsActive} .title-box-3`) as HTMLElement;
+      if (box3) box3.style.display = activeData.title3 ? 'block' : 'none';
       (document.querySelector(`${detailsActive} .desc`) as HTMLElement).textContent =
         activeData.description;
 
@@ -267,6 +292,7 @@ export class SliderComponent implements OnInit, AfterViewInit, OnDestroy {
       gsap.to(`${detailsActive} .text`, { y: 0, delay: 0.1, duration: 0.7, ease: this.ease });
       gsap.to(`${detailsActive} .title-1`, { y: 0, delay: 0.15, duration: 0.7, ease: this.ease });
       gsap.to(`${detailsActive} .title-2`, { y: 0, delay: 0.15, duration: 0.7, ease: this.ease });
+      gsap.to(`${detailsActive} .title-3`, { y: 0, delay: 0.15, duration: 0.7, ease: this.ease });
       gsap.to(`${detailsActive} .desc`, { y: 0, delay: 0.3, duration: 0.4, ease: this.ease });
       gsap.to(`${detailsActive} .cta`, {
         y: 0,
@@ -333,6 +359,7 @@ export class SliderComponent implements OnInit, AfterViewInit, OnDestroy {
           gsap.set(`${detailsInactive} .text`, { y: 100 });
           gsap.set(`${detailsInactive} .title-1`, { y: 100 });
           gsap.set(`${detailsInactive} .title-2`, { y: 100 });
+          gsap.set(`${detailsInactive} .title-3`, { y: 100 });
           gsap.set(`${detailsInactive} .desc`, { y: 50 });
           gsap.set(`${detailsInactive} .cta`, { y: 60 });
 

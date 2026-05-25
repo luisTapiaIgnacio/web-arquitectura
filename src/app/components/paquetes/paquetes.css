@@ -25,7 +25,7 @@
   .pack-card {
     width: 320px;
     flex-shrink: 0;
-    background: #0bb5d4;
+    background: var(--color-secondary);
     border-radius: 22px;
     overflow: visible;
     position: relative;

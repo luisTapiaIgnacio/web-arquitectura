@@ -90,28 +90,41 @@
   border-radius: 99px;
   background-color: white;
 }
-
+.details .title-box-3 {
+  display: none;
+}
 .details .title-1,
-.details .title-2 {
-  font-weight: 600;
-  font-size: 72px;
+.details .title-2,
+.details .title-3 {
+  font-weight: 800;
+  font-size: 80px;
   font-family: "Oswald", sans-serif;
-  line-height: 1;
+  line-height: 1.1;        /* ← sube de 1 a 1.1 */
+  padding-bottom: 4px;     /* ← espacio extra para descendentes */
+  letter-spacing: -1px;      /* ← evita que hereden spacing raro */
+  word-spacing: normal;      /* ← igual */
+  background: linear-gradient(135deg, #f76d55, #f1cb63, #f6703b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.9));
 }
 
+
 .details .title-box-1,
-.details .title-box-2 {
+.details .title-box-2,
+.details .title-box-3 {
   margin-top: 2px;
-  height: 100px;
+  height: 80px;
   overflow: hidden;
 }
 
 .details .desc {
   margin-top: 16px;
-  width: 500px;
+  width: 700px;
   line-height: 1.6;
-  font-size: 16px;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  color: rgba(166, 164, 164, 0.7);
   text-transform: uppercase;
 }
 
@@ -152,7 +165,7 @@
 }
 
 .details .cta .bookmark:hover {
-  background: linear-gradient(135deg, #0d6efd, #0047b3);
+  background: linear-gradient(135deg, #fdbd0d, #b35a00);
   border-color: rgba(255, 255, 255, 0.35);
   transform: translateY(-4px) scale(1.06);
   box-shadow: 0 14px 30px rgba(13, 110, 253, 0.45),

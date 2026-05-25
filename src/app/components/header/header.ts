@@ -15,6 +15,7 @@ export class Header implements OnInit, OnDestroy {
 
   navLinks: NavLink[] = [
     { label: 'Inicio',    href: '#inicio'    },
+ 
     { label: 'Nosotros',  href: '#nosotros'  },
     { label: 'Servicios', href: '#servicios' },
     { label: 'Galería',   href: '#galeria'   },

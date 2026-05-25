@@ -25,6 +25,11 @@
   left: 10px;
   z-index: 10;
   width: 150px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: block;
+  border-radius: 12px;
+  text-decoration: none;
 }
 
 .badge-proyectos img {
@@ -32,10 +37,25 @@
   height: auto;
   display: block;
   border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.35);
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.35));
   animation: floatUp 5s ease-in-out infinite;
 }
 
+.badge-proyectos:hover {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 100 100"><text y=".9em" font-size="90">👆</text></svg>'), pointer;
+  transform: translateY(-6px) scale(1.05);
+  filter: drop-shadow(0 8px 20px rgba(138, 43, 226, 0.7));
+  
+}
+
+.badge-proyectos:hover img {
+  filter: drop-shadow(0 0 12px rgba(138, 43, 226, 0.7));
+}
+
+.badge-proyectos:active {
+  transform: scale(0.95);
+  filter: drop-shadow(0 0 12px rgba(138, 43, 226, 0.7));
+}
 /* ── Badge +5 años ── */
 .badge-anos {
   position: absolute;
@@ -43,6 +63,10 @@
   right: 10px;
   z-index: 10;
   width: 150px;
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  display: block;
+  text-decoration: none;
 }
 
 .badge-anos img {
@@ -50,9 +74,22 @@
   height: auto;
   display: block;
   border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.35);
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.35));
   animation: floatUp 5s ease-in-out infinite;
   animation-delay: 0.5s;
+}
+
+.badge-anos:hover {
+  transform: translateY(-6px) scale(1.05);
+  filter: drop-shadow(0 8px 20px rgba(0, 119, 255, 0.7));
+}
+
+.badge-anos:hover img {
+  filter: drop-shadow(0 0 12px rgba(0, 119, 255, 0.8));
+}
+
+.badge-anos:active {
+  transform: scale(0.95);
 }
 
 /* ── Flechas ── */

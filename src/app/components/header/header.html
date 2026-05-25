@@ -3,7 +3,7 @@
     <!-- LOGO -->
     <a class="logo" href="#inicio" (click)="setActive('Inicio')">
       <img
-        src="assets/images/estu.png"
+        src="assets/images/logo-alex.png"
         alt="Estudio Tapia — Arquitectura y Construcción"
         class="logo-img"
       />
@@ -25,9 +25,12 @@
 
     <!-- CTA + HAMBURGER -->
     <div class="d-flex align-items-center gap-3">
-      <a href="#contacto" class="cta-btn d-none d-lg-inline-flex" (click)="setActive('Contacto')">
-        Consulta gratis
-      </a>
+      <a href="https://w.app/estudio_tapia" 
+   class="cta-btn d-none d-lg-inline-flex"
+   target="_blank"
+   rel="noopener">
+  Consulta gratis
+</a>
       <button
         class="hamburger d-lg-none"
         (click)="toggleMenu()"
@@ -54,10 +57,12 @@
     >
       {{ link.label }}
     </a>
+
+    <!-- Botón externo a WhatsApp -->
     <a
-      href="https://wa.me/51923828485?text=ESTUDIO%20TAPIA,%20arquitectura%20y%20construccion%20les%20da%20la%20bienvenida%20y%20prestos%20para%20apoyarle%20en%20su%20proyecto"
+      href="https://w.app/estudio_tapia"
       class="cta-btn mt-3 text-center"
-      (click)="setActive('Contacto')"
+      target="_blank"
     >
       Consulta gratis
     </a>
@@ -66,3 +71,4 @@
 
 <!-- Overlay -->
 <div class="overlay" [class.visible]="menuOpen" (click)="toggleMenu()"></div>
+
